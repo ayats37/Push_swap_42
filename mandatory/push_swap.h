@@ -6,7 +6,24 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/02 12:59:46 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/02 13:19:49 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+
+
+
+
+
+
+
+
+
+#endif
