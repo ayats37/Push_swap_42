@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 22:37:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/03 00:26:47 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/03 02:49:39 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ int get_index_value(t_stack *stack, int index)
 	current = stack->head;
 	if (index < 0 || index >= stack->size)
 		return (-1);
-	while (i < index)
+	while (i < index && current != NULL)
 	{
 		current = current->next;
 		i++;
 	}
+	if (current == NULL)
+		return (-1);
 	return (current->value);
 }
 int 	get_min_index(t_stack *stack)
@@ -35,6 +37,7 @@ int 	get_min_index(t_stack *stack)
 	int index;
 	t_node *current;
 	
+	current = stack->head;
 	min_index = 0;
 	index = 0;
 	min_value = current->value;
@@ -55,7 +58,7 @@ int 	get_min_index(t_stack *stack)
 
 void	get_rotate_type(t_stack *stack, int index, int *direction, int *rotations)
 {
-	if (index < 0 || index >= stack->head)
+	if (index < 0 || index >= stack->size)
 	{
 		*direction = 0;
 		*rotations = 0;

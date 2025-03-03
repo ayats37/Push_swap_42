@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/03 00:59:13 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/03 02:00:27 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 #include <limits.h>
 
 typedef struct s_node
@@ -57,6 +57,7 @@ int 	get_min_index(t_stack *stack);
 void	get_rotate_type(t_stack *stack, int index, int *direction, int *rotations);
 void sort_four(t_stack *stack_a, t_stack *stack_b);
 void	sort_five(t_stack *stack_a, t_stack *stack_b);
+void	free_stack(t_stack *stack);
 
 
 

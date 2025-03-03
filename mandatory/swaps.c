@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:58:36 by taya              #+#    #+#             */
-/*   Updated: 2025/03/02 20:23:25 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/03 02:00:59 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 	int tmp_a;
 	int tmp_b;
 
-	if (stack_a < 2 || stack_b < 2)
+	if (stack_a->size < 2 || stack_b->size < 2)
 		return;
 	tmp_a = stack_a->head->value;
 	stack_a->head->value = stack_a->tail->value;

@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 22:38:11 by taya              #+#    #+#             */
-/*   Updated: 2025/03/03 00:51:36 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/03 03:23:03 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ void sort_three(t_stack *stack_a)
 		sa(stack_a);
 	else if (a > b && b < c && a > c)
 		ra(stack_a);
-	else if (a > b && b > c && a > c)
+	else if (a > b && b > c)
 	{
 		sa(stack_a);
 		rra(stack_a);
 	}
 }
+
+
 void sort_four(t_stack *stack_a, t_stack *stack_b)
 {
 	int min_index;
@@ -67,7 +69,7 @@ void sort_four(t_stack *stack_a, t_stack *stack_b)
 			ra(stack_a);
 		else
 			rra(stack_a);
-	i++;
+		i++;
 	}
 	pb(stack_a, stack_b);
 	sort_three(stack_a);

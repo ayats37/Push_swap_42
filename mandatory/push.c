@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 13:00:12 by taya              #+#    #+#             */
-/*   Updated: 2025/03/02 20:32:08 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/03 03:08:45 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	int value;
 	
-	if (stack_b->size == 0)
+	if (stack_a->size == 0)
 		return;
 	value = pop(stack_a);
 	push(stack_b, value);	
