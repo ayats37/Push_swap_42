@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 22:37:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/03 00:10:23 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/03 00:26:47 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,24 @@ int 	get_min_index(t_stack *stack)
 		index++;
 	}
 	return (min_index);
+}
+
+void	get_rotate_type(t_stack *stack, int index, int *direction, int *rotations)
+{
+	if (index < 0 || index >= stack->head)
+	{
+		*direction = 0;
+		*rotations = 0;
+		return;
+	}
+	if (index <= stack->size / 2)
+	{
+		*direction = 1;
+		*rotations = index;
+	}
+	else
+	{
+		*direction = -1;
+		*rotations = stack->size - index;	
+	}
 }
