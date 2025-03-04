@@ -6,16 +6,16 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 22:37:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/03 02:49:39 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/04 21:19:44 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_index_value(t_stack *stack, int index)
+int	get_index_value(t_stack *stack, int index)
 {
-	int i;
-	t_node *current;
+	int		i;
+	t_node	*current;
 
 	i = 0;
 	current = stack->head;
@@ -30,13 +30,14 @@ int get_index_value(t_stack *stack, int index)
 		return (-1);
 	return (current->value);
 }
-int 	get_min_index(t_stack *stack)
+
+int	get_min_index(t_stack *stack)
 {
-	int min_index;
-	int min_value;
-	int index;
-	t_node *current;
-	
+	int		min_index;
+	int		min_value;
+	int		index;
+	t_node	*current;
+
 	current = stack->head;
 	min_index = 0;
 	index = 0;
@@ -56,13 +57,14 @@ int 	get_min_index(t_stack *stack)
 	return (min_index);
 }
 
-void	get_rotate_type(t_stack *stack, int index, int *direction, int *rotations)
+void	get_rotate_type(t_stack *stack, int index, int *direction,
+		int *rotations)
 {
 	if (index < 0 || index >= stack->size)
 	{
 		*direction = 0;
 		*rotations = 0;
-		return;
+		return ;
 	}
 	if (index <= stack->size / 2)
 	{
@@ -72,6 +74,16 @@ void	get_rotate_type(t_stack *stack, int index, int *direction, int *rotations)
 	else
 	{
 		*direction = -1;
-		*rotations = stack->size - index;	
+		*rotations = stack->size - index;
 	}
+}
+
+void	fill_stack(t_stack *stack_a, char **args, int count)
+{
+	int	i;
+
+	i = count - 1;
+	init_stack(stack_a);
+	while (i >= 0)
+		push(stack_a, ft_atoi(args[i--]));
 }

@@ -1,4 +1,4 @@
-SRCS =  ./mandatory/push.c ./mandatory/rotate.c ./mandatory/swaps.c ./mandatory/reverse_rotate.c  ./mandatory/stack_utils.c  ./mandatory/utils.c ./mandatory/small_sort.c ./mandatory/push_swap.c
+SRCS =  ./mandatory/push.c ./mandatory/rotate.c ./mandatory/swaps.c ./mandatory/reverse_rotate.c  ./mandatory/stack_utils.c  ./mandatory/utils.c ./mandatory/small_sort.c ./mandatory/push_swap.c ./mandatory/tools_stack.c
 SRCS_BONUS = 
 
 CC = cc

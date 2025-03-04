@@ -14,10 +14,10 @@
 
 void	sa(t_stack *stack_a)
 {
-	int tmp;
+	int	tmp;
 
 	if (stack_a->size < 2)
-		return;
+		return ;
 	tmp = stack_a->head->value;
 	stack_a->head->value = stack_a->tail->value;
 	stack_a->tail->value = tmp;
@@ -26,10 +26,10 @@ void	sa(t_stack *stack_a)
 
 void	sb(t_stack *stack_b)
 {
-	int tmp;
+	int	tmp;
 
 	if (stack_b->size < 2)
-		return;
+		return ;
 	tmp = stack_b->head->value;
 	stack_b->head->value = stack_b->tail->value;
 	stack_b->tail->value = tmp;
@@ -38,11 +38,11 @@ void	sb(t_stack *stack_b)
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-	int tmp_a;
-	int tmp_b;
+	int	tmp_a;
+	int	tmp_b;
 
 	if (stack_a->size < 2 || stack_b->size < 2)
-		return;
+		return ;
 	tmp_a = stack_a->head->value;
 	stack_a->head->value = stack_a->tail->value;
 	stack_a->tail->value = tmp_a;

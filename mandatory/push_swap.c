@@ -6,60 +6,22 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/03 04:41:20 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/04 22:17:16 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_digit(int c) 
+int	is_digit(int c)
 {
-    return (c >= '0' && c <= '9');
-}
-int valid_nbr(const char *str)
-{
-	int i;
-	
-	i = 0;
-	if (str[0] == '-' || str[0] == '+')
-		i = 1;
-	while (str[i])
-	{
-		if (!is_digit(str[i]))
-			return (0);
-		i++;
-	}
-	return(1);
-}
-int	duplicate(int argc, char **argv)
-{
-	int i;
-	int j;
-
-	i = 1;
-	while (i < argc)
-	{
-		j = i + 1;
-		while (j < argc)
-		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				return(1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
- 
-void init_stack(t_stack *stack) {
-    stack->head = NULL;
-    stack->tail = NULL;
-    stack->size = 0;
+	return (c >= '0' && c <= '9');
 }
 
 void	sort_stack(t_stack *stack_a, t_stack *stack_b)
 {
-	if (stack_a->size == 2)
+	if (is_sorted(stack_a))
+		return ;
+	else if (stack_a->size == 2)
 		sort_two(stack_a);
 	else if (stack_a->size == 3)
 		sort_three(stack_a);
@@ -69,37 +31,28 @@ void	sort_stack(t_stack *stack_a, t_stack *stack_b)
 		sort_five(stack_a, stack_b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack stack_a;
-	t_stack stack_b;
-	int i;
-	int num;
+	t_stack	stack_a;
+	t_stack	stack_b;
+	char	**args;
+	int		count;
+	int		free_flag;
 
-	if (argc < 2 || duplicate(argc, argv))
+	count = 0;
+	free_flag = 0;
+	args = parse_args(argc, argv, &count, &free_flag);
+	if (!args || count == 0 || duplicate(args, count) || !validate_numbers(args, count))
 	{
-		write(1, "Error\n", 6);
-		return (1);
-	}
-	i = 1;
-	while(i < argc)
-	{
-		if (!valid_nbr(argv[i]))
-		{
-			write(1, "Error\n", 6);
-			return (1);
-		}
-		i++;
+		if (free_flag)
+			free_split(args);
+		return (write(2, "Error\n", 6), 1);
 	}
 	init_stack(&stack_a);
 	init_stack(&stack_b);
-	i = argc - 1;
-	while (i > 0)
-	{
-		num = ft_atoi(argv[i]);
-		push(&stack_a, num);
-		i--;
-	}
+	fill_stack(&stack_a, args, count);
+	if (free_flag)
+		free_split(args);
 	sort_stack(&stack_a, &stack_b);
-	return(0);
+	return (0);
 }

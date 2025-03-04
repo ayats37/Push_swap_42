@@ -6,16 +6,16 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 14:32:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/03 01:18:56 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/04 21:49:05 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *create_node(int value)
+t_node	*create_node(int value)
 {
-	t_node *new_node;
-	
+	t_node	*new_node;
+
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
@@ -27,8 +27,8 @@ t_node *create_node(int value)
 
 void	free_stack(t_stack *stack)
 {
-	t_node *curr;
-	t_node *next;
+	t_node	*curr;
+	t_node	*next;
 
 	curr = stack->head;
 	while (curr)
@@ -38,6 +38,28 @@ void	free_stack(t_stack *stack)
 		curr = next;
 	}
 	stack->head = NULL;
-  stack->tail = NULL;
-  stack->size = 0;
+	stack->tail = NULL;
+	stack->size = 0;
+}
+
+void	init_stack(t_stack *stack)
+{
+	stack->head = NULL;
+	stack->tail = NULL;
+	stack->size = 0;
+}
+
+void	free_split(char **split)
+{
+	int	i;
+
+	if (!split)
+		return ;
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }

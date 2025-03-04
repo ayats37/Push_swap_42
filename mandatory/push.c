@@ -14,11 +14,11 @@
 
 void	push(t_stack *stack, int value)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = create_node(value);
 	if (!new_node)
-		return;
+		return ;
 	if (stack->size == 0)
 	{
 		stack->head = new_node;
@@ -35,8 +35,8 @@ void	push(t_stack *stack, int value)
 
 int	pop(t_stack *stack)
 {
-	t_node *tmp;
-	int value;
+	t_node	*tmp;
+	int		value;
 
 	if (stack->size == 0)
 		return (-1);
@@ -57,25 +57,24 @@ int	pop(t_stack *stack)
 	return (value);
 }
 
-
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
-	int value;
-	
+	int	value;
+
 	if (stack_b->size == 0)
-		return;
+		return ;
 	value = pop(stack_b);
-	push(stack_a, value);	
+	push(stack_a, value);
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
-	int value;
-	
+	int	value;
+
 	if (stack_a->size == 0)
-		return;
+		return ;
 	value = pop(stack_a);
-	push(stack_b, value);	
+	push(stack_b, value);
 	write(1, "pb\n", 3);
 }
