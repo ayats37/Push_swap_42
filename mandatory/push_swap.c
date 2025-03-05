@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/04 22:17:16 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/04 23:19:29 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,19 @@ void	sort_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	if (is_sorted(stack_a))
 		return ;
-	else if (stack_a->size == 2)
-		sort_two(stack_a);
-	else if (stack_a->size == 3)
-		sort_three(stack_a);
-	else if (stack_a->size == 4)
-		sort_four(stack_a, stack_b);
-	else if (stack_a->size == 5)
-		sort_five(stack_a, stack_b);
+	if (stack_a->size <= 5)
+	{
+		if (stack_a->size == 2)
+			sort_two(stack_a);
+		else if (stack_a->size == 3)
+			sort_three(stack_a);
+		else if (stack_a->size == 4)
+			sort_four(stack_a, stack_b);
+		else if (stack_a->size == 5)
+			sort_five(stack_a, stack_b);
+		return ;
+	}
+	advanced_sorting_strategy(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -42,7 +47,8 @@ int	main(int argc, char **argv)
 	count = 0;
 	free_flag = 0;
 	args = parse_args(argc, argv, &count, &free_flag);
-	if (!args || count == 0 || duplicate(args, count) || !validate_numbers(args, count))
+	if (!args || count == 0 || duplicate(args, count) || !validate_numbers(args,
+			count))
 	{
 		if (free_flag)
 			free_split(args);
