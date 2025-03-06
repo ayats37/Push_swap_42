@@ -70,8 +70,7 @@ void				init_stack(t_stack *stack);
 int					validate_numbers(char **args, int count);
 int					calculate_range_threshold(t_stack *stack);
 int					find_value_position(t_stack *stack, int target_value);
-void	range_sort(t_stack *stack_a, t_stack *stack_b);
-void	sort_stack(t_stack *stack_a, t_stack *stack_b);
-
+void				range_sort(t_stack *stack_a, t_stack *stack_b);
+void				sort_stack(t_stack *stack_a, t_stack *stack_b);
 
 #endif

@@ -25,7 +25,7 @@ t_node	*create_node(int value)
 	return (new_node);
 }
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
 	t_node	*curr;
 	t_node	*next;

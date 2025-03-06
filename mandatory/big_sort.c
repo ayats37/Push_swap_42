@@ -69,8 +69,8 @@ void	range_sort(t_stack *stack_a, t_stack *stack_b)
 		if (current_value > range_threshold)
 		{
 			if (stack_a->size == 1)
-      	break;
-			ra(stack_a);	
+				break ;
+			ra(stack_a);
 		}
 		else if (current_value < min_range)
 		{
