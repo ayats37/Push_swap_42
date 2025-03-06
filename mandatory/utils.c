@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 14:32:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/04 21:49:05 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/06 16:11:31 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_node	*create_node(int value)
 	return (new_node);
 }
 
-void	free_stack(t_stack *stack)
+void free_stack(t_stack *stack)
 {
 	t_node	*curr;
 	t_node	*next;

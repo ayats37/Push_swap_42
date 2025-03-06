@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/04 23:31:29 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/06 19:53:26 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	find_value_position(t_stack *stack, int target_value)
 	return (-1);
 }
 
-void	advanced_sorting_strategy(t_stack *stack_a, t_stack *stack_b)
+void	range_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int	range_threshold;
 	int	min_range;

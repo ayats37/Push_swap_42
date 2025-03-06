@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/04 23:29:00 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/06 16:20:03 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft/libft.h"
 # include <limits.h>
-# include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -68,11 +67,11 @@ int					is_digit(int c);
 int					valid_nbr(const char *str);
 int					duplicate(char **args, int count);
 void				init_stack(t_stack *stack);
-void				init_stack(t_stack *stack);
 int					validate_numbers(char **args, int count);
 int					calculate_range_threshold(t_stack *stack);
 int					find_value_position(t_stack *stack, int target_value);
-void				advanced_sorting_strategy(t_stack *stack_a,
-						t_stack *stack_b);
+void	range_sort(t_stack *stack_a, t_stack *stack_b);
+void	sort_stack(t_stack *stack_a, t_stack *stack_b);
+
 
 #endif

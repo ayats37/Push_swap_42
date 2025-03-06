@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/04 23:19:29 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/06 16:32:25 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	sort_stack(t_stack *stack_a, t_stack *stack_b)
 			sort_five(stack_a, stack_b);
 		return ;
 	}
-	advanced_sorting_strategy(stack_a, stack_b);
+	range_sort(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -52,7 +52,8 @@ int	main(int argc, char **argv)
 	{
 		if (free_flag)
 			free_split(args);
-		return (write(2, "Error\n", 6), 1);
+		write(2, "Error\n", 6);
+		return (1);
 	}
 	init_stack(&stack_a);
 	init_stack(&stack_b);
