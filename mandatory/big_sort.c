@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/06 19:53:26 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/06 20:49:01 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,11 @@ void	range_sort(t_stack *stack_a, t_stack *stack_b)
 	{
 		current_value = stack_a->head->value;
 		if (current_value > range_threshold)
-			ra(stack_a);
+		{
+			if (stack_a->size == 1)
+      	break;
+			ra(stack_a);	
+		}
 		else if (current_value < min_range)
 		{
 			pb(stack_a, stack_b);
