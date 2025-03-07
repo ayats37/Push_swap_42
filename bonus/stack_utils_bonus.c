@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:08:04 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 00:50:22 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/07 01:26:42 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,8 @@ int	init_stacks(int argc, char **argv, t_stack *stack_a)
 	int	value;
 	int	i;
 
-	i = 1;
-	while (i < argc)
+	i = argc - 1;
+	while (i > 0)
 	{
 		if (!is_valid_number(argv[i]))
 		{
@@ -139,7 +139,7 @@ int	init_stacks(int argc, char **argv, t_stack *stack_a)
 			return (1);
 		}
 		push(stack_a, value);
-		i++;
+		i--;
 	}
 	return (0);
 }

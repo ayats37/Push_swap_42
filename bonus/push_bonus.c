@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 22:35:58 by taya              #+#    #+#             */
-/*   Updated: 2025/03/06 22:37:39 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/07 01:03:16 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 		return ;
 	value = pop(stack_b);
 	push(stack_a, value);
-	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
@@ -76,5 +75,4 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 		return ;
 	value = pop(stack_a);
 	push(stack_b, value);
-	write(1, "pb\n", 3);
 }
