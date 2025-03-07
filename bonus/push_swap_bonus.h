@@ -6,18 +6,18 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:02:33 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 00:50:48 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/07 03:26:38 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
-#define PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "../libft/libft.h"
-#include "../get_next_line/get_next_line.h"
+# include "../get_next_line/get_next_line.h"
+# include "../libft/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_node
 {
@@ -33,28 +33,29 @@ typedef struct s_stack
 	int				size;
 }					t_stack;
 
-
-void	sa(t_stack *stack_a);
-void	sb(t_stack *stack_b);
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	rotate(t_stack *stack);
-void	ra(t_stack *stack_a);
-void	rb(t_stack *stack_b);
-void	rr(t_stack *stack_a, t_stack *stack_b);
-void	reverse_rotate(t_stack *stack);
-void	rra(t_stack *stack_a);
-void	rrb(t_stack *stack_b);
-void	rrr(t_stack *stack_a, t_stack *stack_b);
-void	push(t_stack *stack, int value);
-int	  pop(t_stack *stack);
-void	pa(t_stack *stack_a, t_stack *stack_b);
-void	pb(t_stack *stack_a, t_stack *stack_b);
-int	sorted(t_stack *stack);
-void	free_stack(t_stack *stack);
-void	read_input(t_stack *stack_a, t_stack *stack_b);
-int	is_duplicate(t_stack *stack, int value);
-int	init_stacks(int argc, char **argv, t_stack *stack_a);
-int	is_valid_number(char *str);
-t_node	*create_node(int value);
-
+void				sa(t_stack *stack_a);
+void				sb(t_stack *stack_b);
+void				ss(t_stack *stack_a, t_stack *stack_b);
+void				rotate(t_stack *stack);
+void				ra(t_stack *stack_a);
+void				rb(t_stack *stack_b);
+void				rr(t_stack *stack_a, t_stack *stack_b);
+void				reverse_rotate(t_stack *stack);
+void				rra(t_stack *stack_a);
+void				rrb(t_stack *stack_b);
+void				rrr(t_stack *stack_a, t_stack *stack_b);
+void				push(t_stack *stack, int value);
+int					pop(t_stack *stack);
+void				pa(t_stack *stack_a, t_stack *stack_b);
+void				pb(t_stack *stack_a, t_stack *stack_b);
+int					sorted(t_stack *stack);
+void				free_stack(t_stack *stack);
+int					is_duplicate(t_stack *stack, int value);
+int init_stacks(int argc, char **argv, t_stack *stack_a);
+int					is_valid_number(char *str);
+t_node				*create_node(int value);
+void				print_stack(t_stack *stack);
+void	free_split(char **split);
+void execute_input(char *command, t_stack *stack_a, t_stack *stack_b);
+void read_input(t_stack *stack_a, t_stack *stack_b);
 #endif
