@@ -99,4 +99,3 @@ char	**parse_args(int argc, char **argv, int *count, int *free_flag)
 	}
 	return (args);
 }
-

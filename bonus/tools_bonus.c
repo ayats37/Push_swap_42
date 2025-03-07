@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 15:41:09 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 15:58:46 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/07 16:08:11 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	free_split(char **split)
 	}
 	free(split);
 }
+
 t_node	*create_node(int value)
 {
 	t_node	*new_node;
@@ -51,8 +52,8 @@ t_node	*create_node(int value)
 	return (new_node);
 }
 
-// void print_error()
-// {
-// 	write(2, "Error\n", 6);
-// 	exit(1);
-// }
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}

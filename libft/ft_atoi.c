@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 18:59:25 by apple             #+#    #+#             */
-/*   Updated: 2025/03/06 21:59:54 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/07 22:58:48 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int	ft_atoi(const char *str)
 {
 	int			i;
-	long long	result;
+	long long	res;
 	int			sign;
 
 	i = 0;
-	result = 0;
+	res = 0;
 	sign = 1;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
@@ -31,11 +31,10 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (result * 10) + (str[i] - '0');
-		if ((sign == 1 && result > INT_MAX) || (sign == -1 &&
-				-result < INT_MIN))
+		res = (res * 10) + (str[i] - '0');
+		if ((sign == 1 && res > INT_MAX) || (sign == -1 && (-res < INT_MIN)))
 			return (0);
 		i++;
 	}
-	return ((int)(result * sign));
+	return ((int)(res * sign));
 }
