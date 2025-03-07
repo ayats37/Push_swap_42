@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 02:08:26 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 02:26:49 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/07 15:42:46 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,62 +28,75 @@ int	sorted(t_stack *stack)
 	return (1);
 }
 
-int	is_duplicate(t_stack *stack, int value)
+int	is_duplicate(char **args, int count)
 {
-	t_node	*current;
+	int	i;
+	int	j;
 
-	current = stack->head;
-	while (current)
+	i = 1;
+	while (i < count)
 	{
-		if (current->value == value)
-			return (1);
-		current = current->next;
+		j = i + 1;
+		while (j < count)
+		{
+			if (ft_atoi(args[i]) == ft_atoi(args[j]))
+				return (1);
+			j++;
+		}
+		i++;
 	}
 	return (0);
 }
 
-int	is_valid_number(char *str)
+int	valid_nbr(const char *str)
+{
+	if (*str == '\0')
+		return (0);
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str)
+	{
+		if (!is_digit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}
+
+int	validate_numbers(char **args, int count)
 {
 	int	i;
 
 	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (!str[i])
-		return (0);
-	while (str[i])
+	while (i < count)
 	{
-		if (str[i] < '0' || str[i] > '9')
+		if (!valid_nbr(args[i]))
 			return (0);
 		i++;
 	}
 	return (1);
 }
-t_node	*create_node(int value)
-{
-	t_node	*new_node;
 
-	new_node = malloc(sizeof(t_node));
-	if (!new_node)
+char	**parse_args(int argc, char **argv, int *count, int *free_flag)
+{
+	char	**args;
+
+	if (argc < 2)
 		return (NULL);
-	new_node->value = value;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	return (new_node);
-}
-void	free_split(char **split)
-{
-	int	i;
-
-	if (!split)
-		return ;
-	i = 0;
-	while (split[i])
+	if (argc == 2)
 	{
-		free(split[i]);
-		i++;
+		args = ft_split(argv[1], ' ');
+		*free_flag = 1;
+		*count = 0;
+		while (args && args[*count])
+			(*count)++;
 	}
-	free(split);
+	else
+	{
+		args = argv + 1;
+		*count = argc - 1;
+		*free_flag = 0;
+	}
+	return (args);
 }
+

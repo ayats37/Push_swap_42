@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/06 16:20:03 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/07 15:18:18 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int					calculate_range_threshold(t_stack *stack);
 int					find_value_position(t_stack *stack, int target_value);
 void				range_sort(t_stack *stack_a, t_stack *stack_b);
 void				sort_stack(t_stack *stack_a, t_stack *stack_b);
+
 
 #endif
