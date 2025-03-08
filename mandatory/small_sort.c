@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 22:38:11 by taya              #+#    #+#             */
-/*   Updated: 2025/03/06 16:21:26 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 02:40:42 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	sort_three(t_stack *stack_a)
 
 	if (stack_a->size != 3)
 		return ;
-	a = get_index_value(stack_a, 0);
-	b = get_index_value(stack_a, 1);
-	c = get_index_value(stack_a, 2);
+	a = stack_a->head->value;
+	b = stack_a->head->next->value;
+	c = stack_a->head->next->next->value;
 	if (a < b && b > c && a < c)
 	{
 		sa(stack_a);

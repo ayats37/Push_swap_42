@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 01:01:57 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 02:42:29 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void				reverse_rotate(t_stack *stack);
 void				rra(t_stack *stack_a);
 void				rrb(t_stack *stack_b);
 void				rrr(t_stack *stack_a, t_stack *stack_b);
-int					get_index_value(t_stack *stack, int index);
 void				sort_two(t_stack *stack_a);
 void				sort_three(t_stack *stack_a);
 int					get_min_index(t_stack *stack);

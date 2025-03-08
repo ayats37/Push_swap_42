@@ -6,30 +6,11 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 22:37:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/06 16:13:34 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 02:42:38 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	get_index_value(t_stack *stack, int index)
-{
-	int		i;
-	t_node	*current;
-
-	i = 0;
-	current = stack->head;
-	if (index < 0 || index >= stack->size)
-		return (-1);
-	while (i < index && current != NULL)
-	{
-		current = current->next;
-		i++;
-	}
-	if (current == NULL)
-		return (-1);
-	return (current->value);
-}
 
 int	get_min_index(t_stack *stack)
 {
