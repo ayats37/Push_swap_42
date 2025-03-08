@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:02:33 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 15:59:23 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 20:14:59 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int					valid_nbr(const char *str);
 int					is_digit(int c);
 void				fill_stack(t_stack *stack_a, char **args, int count);
 void				print_error(void);
+int	atoi(const char *str);
 
 #endif

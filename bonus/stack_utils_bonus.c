@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:08:04 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 16:25:07 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 20:16:31 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,5 @@ void	fill_stack(t_stack *stack_a, char **args, int count)
 	i = count - 1;
 	init_stack(stack_a);
 	while (i >= 0)
-		push(stack_a, (args[i--]));
+		push(stack_a, atoi(args[i--]));
 }
