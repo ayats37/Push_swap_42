@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 02:42:29 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 16:26:27 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void				init_range_params(t_stack *stack_a, int *range_threshold,
 int					find_max_value(t_stack *stack);
 void				handle_rotation_and_threshold(t_stack *stack_a,
 						int *range_threshold);
+void	print_error(void);
+int	atoi(const char *str);
 
 #endif
