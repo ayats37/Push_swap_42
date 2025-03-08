@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 22:48:10 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 01:01:57 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 	t_node			*head;
 	t_node			*tail;
 	int				size;
+	int				rotation_count;
 }					t_stack;
 
 t_node				*create_node(int value);
@@ -79,5 +80,7 @@ void				process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 void				init_range_params(t_stack *stack_a, int *range_threshold,
 						int *min_range);
 int					find_max_value(t_stack *stack);
+void				handle_rotation_and_threshold(t_stack *stack_a,
+						int *range_threshold);
 
 #endif

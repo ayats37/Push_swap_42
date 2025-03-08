@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 22:43:46 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 22:54:37 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/08 01:01:47 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,17 @@ int	find_value_position(t_stack *stack, int target_value)
 		current = current->next;
 	}
 	return (-1);
+}
+
+void	handle_rotation_and_threshold(t_stack *stack_a, int *range_threshold)
+{
+	if (stack_a->size == 1)
+		return ;
+	ra(stack_a);
+	stack_a->rotation_count++;
+	if (stack_a->rotation_count >= stack_a->size)
+	{
+		stack_a->rotation_count = 0;
+		(*range_threshold)++;
+	}
 }
