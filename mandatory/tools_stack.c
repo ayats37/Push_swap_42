@@ -6,33 +6,64 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:57 by taya              #+#    #+#             */
-/*   Updated: 2025/03/09 12:27:14 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/09 16:20:40 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**parse_args(int argc, char **argv, int *count, int *free_flag)
+char *ft_strcat(char *s1, char *s2)
 {
-	char	**args;
+	int i = 0;
+	int j = 0;
+	
+	while(s1[i])
+		i++;
+	while (s2[j])
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}
+char **parse_args(int argc, char **argv, int *count, int *free_flag)
+{
+    char **args;
+    char *ar;
+    int i;
+	char *tmp;
 
-	if (argc < 2)
-		return (NULL);
-	if (argc == 2)
+    if (argc < 2)
+        return NULL;
+	ar = NULL;
+    ar = ft_strdup("");
+    if (!ar)
+        return NULL;		
+	tmp = ar;
+	i = 1;
+    while (i < argc)
+    {
+        tmp = ft_strjoin(ar, argv[i]);
+        if (!tmp)
+            return (free(ar), NULL);
+		ar = tmp;
+		ft_strcat(ar, " ");
+        i++;
+    }
+    args = ft_split(ar, ' ');
+	int j = 0;
+	while (args[j])
 	{
-		args = ft_split(argv[1], ' ');
-		*free_flag = 1;
-		*count = 0;
-		while (args && args[*count])
-			(*count)++;
+		printf("%s\n", args[j]);
+		j++;
 	}
-	else
-	{
-		args = argv + 1;
-		*count = argc - 1;
-		*free_flag = 0;
-	}
-	return (args);
+    free(ar);
+    *count = 0;
+    while (args && args[*count])
+        (*count)++;
+    return (*free_flag = 1, args);
 }
 
 int	is_sorted(t_stack *stack)
