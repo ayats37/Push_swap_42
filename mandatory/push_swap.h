@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/09 14:26:56 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/10 23:36:55 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void				handle_rotation_and_threshold(t_stack *stack_a,
 						int *range_threshold);
 void	print_error(void);
 int	atoi(const char *str);
-char *ft_strcat(char *s1, char *s2);
 
 
 #endif

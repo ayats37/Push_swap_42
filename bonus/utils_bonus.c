@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 02:08:26 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 16:25:36 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/10 23:35:49 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,26 +76,42 @@ int	validate_numbers(char **args, int count)
 	}
 	return (1);
 }
-
-char	**parse_args(int argc, char **argv, int *count, int *free_flag)
+char **parse_args(int argc, char **argv, int *count, int *free_flag)
 {
-	char	**args;
+    char **args = NULL;
+    char *ar = NULL;
+    char *tmp = NULL;
+    int i;
 
-	if (argc < 2)
-		return (NULL);
-	if (argc == 2)
-	{
-		args = ft_split(argv[1], ' ');
-		*free_flag = 1;
-		*count = 0;
-		while (args && args[*count])
-			(*count)++;
-	}
-	else
-	{
-		args = argv + 1;
-		*count = argc - 1;
-		*free_flag = 0;
-	}
-	return (args);
+    if (argc < 2)
+        return NULL;
+    ar = ft_strdup("");
+    if (!ar)
+        return NULL;
+    i = 1;
+    while (i < argc)
+    {
+        tmp = ft_strjoin(ar, argv[i]);
+        free(ar);
+        if (!tmp)
+            return NULL;
+        ar = tmp;
+        if (i < argc - 1)
+        {
+            tmp = ft_strjoin(ar, " ");
+            free(ar);
+            if (!tmp)
+                return NULL;
+            ar = tmp;
+        }
+        i++;
+    }
+    args = ft_split(ar, ' ');
+    free(ar);
+    *count = 0;
+    while (args && args[*count])
+        (*count)++;
+    
+    *free_flag = 1;
+    return args;
 }
