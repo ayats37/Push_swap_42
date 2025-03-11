@@ -6,27 +6,11 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 02:08:26 by taya              #+#    #+#             */
-/*   Updated: 2025/03/10 23:35:49 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/11 01:43:09 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
-int	sorted(t_stack *stack)
-{
-	t_node	*current;
-
-	if (stack->size <= 1)
-		return (1);
-	current = stack->head;
-	while (current->next)
-	{
-		if (current->value > current->next->value)
-			return (0);
-		current = current->next;
-	}
-	return (1);
-}
 
 int	is_duplicate(char **args, int count)
 {
@@ -76,42 +60,43 @@ int	validate_numbers(char **args, int count)
 	}
 	return (1);
 }
-char **parse_args(int argc, char **argv, int *count, int *free_flag)
-{
-    char **args = NULL;
-    char *ar = NULL;
-    char *tmp = NULL;
-    int i;
 
-    if (argc < 2)
-        return NULL;
-    ar = ft_strdup("");
-    if (!ar)
-        return NULL;
-    i = 1;
-    while (i < argc)
-    {
-        tmp = ft_strjoin(ar, argv[i]);
-        free(ar);
-        if (!tmp)
-            return NULL;
-        ar = tmp;
-        if (i < argc - 1)
-        {
-            tmp = ft_strjoin(ar, " ");
-            free(ar);
-            if (!tmp)
-                return NULL;
-            ar = tmp;
-        }
-        i++;
-    }
-    args = ft_split(ar, ' ');
-    free(ar);
-    *count = 0;
-    while (args && args[*count])
-        (*count)++;
-    
-    *free_flag = 1;
-    return args;
+char	*join_args(int argc, char **argv)
+{
+	char	*ar;
+	char	*tmp;
+	int		i;
+
+	ar = ft_strdup(argv[1]);
+	if (!ar)
+		return (NULL);
+	i = 2;
+	while (i < argc)
+	{
+		tmp = ft_strjoin(ar, " ");
+		if (!tmp)
+			return (free(ar), NULL);
+		ar = tmp;
+		tmp = ft_strjoin(ar, argv[i++]);
+		if (!tmp)
+			return (free(ar), NULL);
+		free(ar);
+		ar = tmp;
+	}
+	return (ar);
+}
+
+char	**parse_args(int argc, char **argv, int *count, int *free_flag)
+{
+	char	**args;
+	char	*ar;
+
+	ar = join_args(argc, argv);
+	args = ft_split(ar, ' ');
+	free(ar);
+	*count = 0;
+	while (args && args[*count])
+		(*count)++;
+	*free_flag = 1;
+	return (args);
 }

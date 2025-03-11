@@ -6,16 +6,11 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/10 23:22:41 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/11 01:42:10 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_digit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
 
 void	sort_stack(t_stack *stack_a, t_stack *stack_b)
 {

@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 14:32:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/07 15:36:17 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/10 23:47:46 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,10 @@ void	free_split(char **split)
 		i++;
 	}
 	free(split);
+}
+
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }
