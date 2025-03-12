@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:02:33 by taya              #+#    #+#             */
-/*   Updated: 2025/03/11 01:45:38 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/12 01:59:35 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ void				free_split(char **split);
 void				execute_input(char *input, t_stack *stack_a,
 						t_stack *stack_b);
 void				read_input(t_stack *stack_a, t_stack *stack_b);
-char				**parse_args(int argc, char **argv, int *count,
-						int *free_flag);
+char				**parse_args(int argc, char **argv, int *count);
 void				init_stack(t_stack *stack);
 int					validate_numbers(char **args, int count);
 int					valid_nbr(const char *str);

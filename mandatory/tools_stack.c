@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:57 by taya              #+#    #+#             */
-/*   Updated: 2025/03/11 01:41:59 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/12 01:56:16 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*join_args(int argc, char **argv)
 	return (ar);
 }
 
-char	**parse_args(int argc, char **argv, int *count, int *free_flag)
+char	**parse_args(int argc, char **argv, int *count)
 {
 	char	**args;
 	char	*ar;
@@ -48,6 +48,5 @@ char	**parse_args(int argc, char **argv, int *count, int *free_flag)
 	*count = 0;
 	while (args && args[*count])
 		(*count)++;
-	*free_flag = 1;
 	return (args);
 }

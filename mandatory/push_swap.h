@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/11 01:46:10 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/12 02:02:44 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ void				sort_four(t_stack *stack_a, t_stack *stack_b);
 void				sort_five(t_stack *stack_a, t_stack *stack_b);
 void				free_stack(t_stack *stack);
 void				free_split(char **split);
-char				**parse_args(int argc, char **argv, int *count,
-						int *free_flag);
+char				**parse_args(int argc, char **argv, int *count);
 void				fill_stack(t_stack *stack_a, char **args, int count);
 int					is_sorted(t_stack *stack);
 int					is_digit(int c);

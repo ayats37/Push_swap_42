@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/11 01:42:10 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/12 01:57:15 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,21 @@ int	main(int argc, char **argv)
 	t_stack	stack_b;
 	char	**args;
 	int		count;
-	int		free_flag;
 
+	if (argc <= 1)
+		return (0);
 	count = 0;
-	free_flag = 0;
-	args = parse_args(argc, argv, &count, &free_flag);
+	args = parse_args(argc, argv, &count);
 	if (!args || count == 0 || duplicate(args, count) || !validate_numbers(args,
 			count))
 	{
-		if (free_flag)
-			free_split(args);
-		write(2, "Error\n", 6);
-		return (1);
+		free_split(args);
+		return (write(2, "Error\n", 6), 1);
 	}
 	init_stack(&stack_a);
 	init_stack(&stack_b);
 	fill_stack(&stack_a, args, count);
-	if (free_flag)
-		free_split(args);
+	free_split(args);
 	sort_stack(&stack_a, &stack_b);
 	return (0);
 }
