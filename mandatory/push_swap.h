@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 19:33:19 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:44:10 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft/libft.h"
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -32,7 +31,6 @@ typedef struct s_stack
 	t_node			*head;
 	t_node			*tail;
 	int				size;
-	int				rotation_count;
 }					t_stack;
 
 t_node				*create_node(int value);
@@ -79,7 +77,7 @@ void				init_range_params(t_stack *stack_a, int *range_threshold,
 						int *min_range);
 int					find_max_index(t_stack *stack);
 void				print_error(void);
-int					atoi(const char *str);
+int					f_atoi(const char *str);
 char				*join_args(int argc, char **argv);
 void				fill_index(t_stack *stack_a);
 int					is_only_whitespace(char *str);

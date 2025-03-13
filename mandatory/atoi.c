@@ -6,13 +6,13 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:21:29 by taya              #+#    #+#             */
-/*   Updated: 2025/03/09 12:30:16 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:38:29 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	atoi(const char *str)
+int	f_atoi(const char *str)
 {
 	int			i;
 	long long	res;

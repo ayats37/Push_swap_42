@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:02:33 by taya              #+#    #+#             */
-/*   Updated: 2025/03/12 01:59:35 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:44:02 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../get_next_line/get_next_line.h"
 # include "../libft/libft.h"
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -63,7 +62,7 @@ int					valid_nbr(const char *str);
 int					is_digit(int c);
 void				fill_stack(t_stack *stack_a, char **args, int count);
 void				print_error(void);
-int					atoi(const char *str);
+int					f_atoi(const char *str);
 char				*join_args(int argc, char **argv);
 
 #endif

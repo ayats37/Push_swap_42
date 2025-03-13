@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 01:41:11 by taya              #+#    #+#             */
-/*   Updated: 2025/03/12 01:30:47 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:40:17 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	duplicate(char **args, int count)
 		j = i + 1;
 		while (j < count)
 		{
-			if (atoi(args[i]) == atoi(args[j]))
+			if (f_atoi(args[i]) == f_atoi(args[j]))
 				return (1);
 			j++;
 		}

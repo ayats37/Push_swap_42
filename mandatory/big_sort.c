@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 19:36:44 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:42:27 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 		rb(stack_b);
 		(*range_threshold)++;
 		(*min_range)++;
-		stack_a->rotation_count = 0;
 	}
 	else if (stack_a->head->index >= *min_range
 		&& stack_a->head->index <= *range_threshold)
@@ -38,7 +37,6 @@ void	process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 		pb(stack_a, stack_b);
 		(*range_threshold)++;
 		(*min_range)++;
-		stack_a->rotation_count = 0;
 	}
 }
 
