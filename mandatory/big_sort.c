@@ -6,13 +6,13 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 08:49:51 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 08:54:21 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	max_r(t_stack *stack_a)
+int	max_range(t_stack *stack_a)
 {
 	int	max;
 
