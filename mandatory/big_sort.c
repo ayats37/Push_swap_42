@@ -6,30 +6,28 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 01:17:32 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 08:49:51 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_range_params(t_stack *stack_a, int *range_threshold,
-		int *min_range)
+int	max_r(t_stack *stack_a)
 {
-	*range_threshold = calculate_range_threshold(stack_a);
-	*min_range = 0;
+	int	max;
+
+	max = stack_a->size;
+	return (max * 0.048 + 10);
 }
 
 void	process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 		int *range_threshold, int *min_range)
 {
-	int	current_value;
-
-	current_value = stack_a->head->value;
-	if (current_value > *range_threshold)
+	if (stack_a->head->index > *range_threshold)
 	{
-		handle_rotation_and_threshold(stack_a, range_threshold);
+		ra(stack_a);
 	}
-	else if (current_value < *min_range)
+	else if (stack_a->head->index < *min_range)
 	{
 		pb(stack_a, stack_b);
 		rb(stack_b);
@@ -37,13 +35,21 @@ void	process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 		(*min_range)++;
 		stack_a->rotation_count = 0;
 	}
-	else if (current_value >= *min_range && current_value <= *range_threshold)
+	else if (stack_a->head->index >= *min_range
+			&& stack_a->head->index <= *range_threshold)
 	{
 		pb(stack_a, stack_b);
 		(*range_threshold)++;
 		(*min_range)++;
 		stack_a->rotation_count = 0;
 	}
+}
+
+void	init_range_params(t_stack *stack_a, int *range_threshold,
+		int *min_range)
+{
+	*range_threshold = max_r(stack_a);
+	*min_range = 0;
 }
 
 void	move_to_stack_b(t_stack *stack_a, t_stack *stack_b)
@@ -55,30 +61,30 @@ void	move_to_stack_b(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a->head)
 	{
 		process_move_to_stack_b(stack_a, stack_b, &range_threshold, &min_range);
-		if (stack_a->size == 1 && stack_a->head->value > range_threshold)
+		if (stack_a->size == 1 && stack_a->head->index > range_threshold)
 			break ;
 	}
 }
 
 void	move_to_stack_a(t_stack *stack_a, t_stack *stack_b)
 {
-	int	max_value;
+	int	max_index;
 	int	max_pos;
 	int	mid_point;
 
 	while (stack_b->head)
 	{
-		max_value = find_max_value(stack_b);
-		max_pos = find_value_position(stack_b, max_value);
+		max_index = find_max_index(stack_b);
+		max_pos = find_index_position(stack_b, max_index);
 		mid_point = stack_b->size / 2;
 		if (max_pos >= mid_point)
 		{
-			while (stack_b->head->value != max_value)
+			while (stack_b->head->index != max_index)
 				rrb(stack_b);
 		}
 		else
 		{
-			while (stack_b->head->value != max_value)
+			while (stack_b->head->index != max_index)
 				rb(stack_b);
 		}
 		pa(stack_a, stack_b);

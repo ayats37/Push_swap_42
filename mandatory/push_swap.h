@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/12 02:02:44 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 08:49:11 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_node
 	int				value;
 	struct s_node	*next;
 	struct s_node	*prev;
+	int				index;
 }					t_node;
 
 typedef struct s_stack
@@ -68,7 +69,7 @@ int					duplicate(char **args, int count);
 void				init_stack(t_stack *stack);
 int					validate_numbers(char **args, int count);
 int					calculate_range_threshold(t_stack *stack);
-int					find_value_position(t_stack *stack, int target_value);
+int					find_index_position(t_stack *stack, int target_index);
 void				range_sort(t_stack *stack_a, t_stack *stack_b);
 void				sort_stack(t_stack *stack_a, t_stack *stack_b);
 void				move_to_stack_a(t_stack *stack_a, t_stack *stack_b);
@@ -77,11 +78,12 @@ void				process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 						int *range_threshold, int *min_range);
 void				init_range_params(t_stack *stack_a, int *range_threshold,
 						int *min_range);
-int					find_max_value(t_stack *stack);
-void				handle_rotation_and_threshold(t_stack *stack_a,
-						int *range_threshold);
+int					find_max_index(t_stack *stack);
+void	handle_rotation_and_threshold(t_stack *stack_a,
+									int *range_threshold);
 void				print_error(void);
 int					atoi(const char *str);
 char				*join_args(int argc, char **argv);
+int					max_r(t_stack *stack_a);
 
 #endif

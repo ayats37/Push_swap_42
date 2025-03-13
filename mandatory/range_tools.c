@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 22:43:46 by taya              #+#    #+#             */
-/*   Updated: 2025/03/08 01:01:47 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 08:49:30 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,25 @@ int	calculate_range_threshold(t_stack *stack)
 	return ((int)(stack->size * 0.048 + 10));
 }
 
-int	find_max_value(t_stack *stack)
+int	find_max_index(t_stack *stack)
 {
 	t_node	*current;
-	int		max_value;
+	int		max_index;
 
 	if (!stack || !stack->head)
 		return (-1);
 	current = stack->head;
-	max_value = current->value;
+	max_index = current->index;
 	while (current)
 	{
-		if (current->value > max_value)
-			max_value = current->value;
+		if (current->index > max_index)
+			max_index = current->index;
 		current = current->next;
 	}
-	return (max_value);
+	return (max_index);
 }
 
-int	find_value_position(t_stack *stack, int target_value)
+int	find_index_position(t_stack *stack, int target_index)
 {
 	t_node	*current;
 	int		position;
@@ -44,7 +44,7 @@ int	find_value_position(t_stack *stack, int target_value)
 	position = 0;
 	while (current)
 	{
-		if (current->value == target_value)
+		if (current->index == target_index)
 			return (position);
 		position++;
 		current = current->next;
