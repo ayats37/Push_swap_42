@@ -6,11 +6,22 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:57 by taya              #+#    #+#             */
-/*   Updated: 2025/03/12 01:56:16 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:33:51 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_only_whitespace(char *str)
+{
+	while (*str)
+	{
+		if (*str != ' ' && *str != '\t')
+			return (0);
+		str++;
+	}
+	return (1);
+}
 
 char	*join_args(int argc, char **argv)
 {
@@ -24,6 +35,8 @@ char	*join_args(int argc, char **argv)
 	i = 2;
 	while (i < argc)
 	{
+		if (argv[i][0] == '\0' || is_only_whitespace(argv[i]))
+			return (free(ar), NULL);
 		tmp = ft_strjoin(ar, " ");
 		if (!tmp)
 			return (free(ar), NULL);

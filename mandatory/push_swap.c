@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 09:32:41 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:01:35 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,6 @@ int	main(int argc, char **argv)
 	init_stack(&stack_b);
 	fill_stack(&stack_a, args, count);
 	fill_index(&stack_a);
-	// t_stack *tmp = &stack_a;
-	// while (tmp->head)
-	// {
-	// 	printf("%d\n", tmp->head->index);
-	// 	tmp->head= tmp->head->next;	
-	// }
-	// exit(0);
 	free_split(args);
 	sort_stack(&stack_a, &stack_b);
 	return (0);

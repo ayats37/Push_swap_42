@@ -6,16 +6,11 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 22:43:46 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 09:45:47 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:17:48 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	calculate_range_threshold(t_stack *stack)
-{
-	return ((int)(stack->size * 0.048 + 10));
-}
 
 int	find_max_index(t_stack *stack)
 {
@@ -51,11 +46,12 @@ int	find_index_position(t_stack *stack, int target_index)
 	}
 	return (-1);
 }
-void fill_index(t_stack *stack_a)
+
+void	fill_index(t_stack *stack_a)
 {
-	int i;
-	t_node *n1;
-	t_node *n2;
+	int		i;
+	t_node	*n1;
+	t_node	*n2;
 
 	i = 0;
 	while (i <= stack_a->size)
@@ -63,15 +59,13 @@ void fill_index(t_stack *stack_a)
 		n1 = NULL;
 		n2 = stack_a->head;
 		while (n2 != NULL)
-        {
-            if (n2->index == -1 && (n1 == NULL || n2->value < n1->value))
-                n1 = n2;
-            n2 = n2->next;
-        }
-        if (n1 != NULL)
-            n1->index = i;
-        i++;
-				
+		{
+			if (n2->index == -1 && (n1 == NULL || n2->value < n1->value))
+				n1 = n2;
+			n2 = n2->next;
+		}
+		if (n1 != NULL)
+			n1->index = i;
+		i++;
 	}
 }
-

@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:45 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 09:25:11 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 19:33:19 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int					valid_nbr(const char *str);
 int					duplicate(char **args, int count);
 void				init_stack(t_stack *stack);
 int					validate_numbers(char **args, int count);
-int					calculate_range_threshold(t_stack *stack);
 int					find_index_position(t_stack *stack, int target_index);
 void				range_sort(t_stack *stack_a, t_stack *stack_b);
 void				sort_stack(t_stack *stack_a, t_stack *stack_b);
@@ -79,12 +78,10 @@ void				process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 void				init_range_params(t_stack *stack_a, int *range_threshold,
 						int *min_range);
 int					find_max_index(t_stack *stack);
-void	handle_rotation_and_threshold(t_stack *stack_a,
-									int *range_threshold);
 void				print_error(void);
 int					atoi(const char *str);
 char				*join_args(int argc, char **argv);
-int					max_range(t_stack *stack_a);
-void fill_index(t_stack *stack_a);
+void				fill_index(t_stack *stack_a);
+int					is_only_whitespace(char *str);
 
 #endif
