@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 09:05:37 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 09:47:01 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	max_range(t_stack *stack_a)
 void	process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 		int *range_threshold, int *min_range)
 {
+	// printf ("%d --- %d\n", *range_threshold , stack_a->head->index);
 	if (stack_a->head->index > *range_threshold)
 	{
 		ra(stack_a);
@@ -79,12 +80,12 @@ void	move_to_stack_a(t_stack *stack_a, t_stack *stack_b)
 		mid_point = stack_b->size / 2;
 		if (max_pos >= mid_point)
 		{
-			while (stack_b->head->index != max_index)
+			while (stack_b->head->value != max_index)
 				rrb(stack_b);
 		}
 		else
 		{
-			while (stack_b->head->index != max_index)
+			while (stack_b->head->value != max_index)
 				rb(stack_b);
 		}
 		pa(stack_a, stack_b);
@@ -94,5 +95,11 @@ void	move_to_stack_a(t_stack *stack_a, t_stack *stack_b)
 void	range_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	move_to_stack_b(stack_a, stack_b);
+	// t_stack *tmp = stack_b;
+	// while (tmp->head)
+	// {
+	// 	printf("%d\n", tmp->head->value);
+	// 	tmp->head= tmp->head->next;	
+	// }
 	move_to_stack_a(stack_a, stack_b);
 }

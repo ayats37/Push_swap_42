@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 14:32:39 by taya              #+#    #+#             */
-/*   Updated: 2025/03/10 23:47:46 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 09:32:26 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_node	*create_node(int value)
 	new_node->value = value;
 	new_node->next = NULL;
 	new_node->prev = NULL;
+	new_node->index = -1;
 	return (new_node);
 }
 
