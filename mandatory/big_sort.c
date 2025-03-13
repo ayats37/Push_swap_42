@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 08:54:21 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/13 09:05:37 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	process_move_to_stack_b(t_stack *stack_a, t_stack *stack_b,
 void	init_range_params(t_stack *stack_a, int *range_threshold,
 		int *min_range)
 {
-	*range_threshold = max_r(stack_a);
+	*range_threshold = max_range(stack_a);
 	*min_range = 0;
 }
 
