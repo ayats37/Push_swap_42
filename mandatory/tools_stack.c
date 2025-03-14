@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:57 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 19:33:51 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/14 23:45:49 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	*join_args(int argc, char **argv)
 		tmp = ft_strjoin(ar, " ");
 		if (!tmp)
 			return (free(ar), NULL);
+		free(ar);
 		ar = tmp;
 		tmp = ft_strjoin(ar, argv[i++]);
 		if (!tmp)

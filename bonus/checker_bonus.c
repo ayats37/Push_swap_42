@@ -6,11 +6,25 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:01:53 by taya              #+#    #+#             */
-/*   Updated: 2025/03/12 01:59:52 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/14 23:56:57 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+
+char	**parse_args(int argc, char **argv, int *count)
+{
+	char	**args;
+	char	*ar;
+
+	ar = join_args(argc, argv);
+	args = ft_split(ar, ' ');
+	free(ar);
+	*count = 0;
+	while (args && args[*count])
+		(*count)++;
+	return (args);
+}
 
 int	main(int argc, char **argv)
 {
@@ -32,6 +46,7 @@ int	main(int argc, char **argv)
 	init_stack(&stack_a);
 	init_stack(&stack_b);
 	fill_stack(&stack_a, args, count);
+	free_split(args);
 	read_input(&stack_a, &stack_b);
 	if (sorted(&stack_a) && (stack_b.size == 0))
 		write(1, "OK\n", 3);

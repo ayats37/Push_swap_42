@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 19:01:35 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/14 23:57:19 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ int	main(int argc, char **argv)
 	fill_index(&stack_a);
 	free_split(args);
 	sort_stack(&stack_a, &stack_b);
-	return (0);
+	return (free_stack(&stack_a), free_stack(&stack_b), 0);
 }

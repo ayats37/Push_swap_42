@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 21:02:33 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 19:44:02 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/14 23:49:36 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void				fill_stack(t_stack *stack_a, char **args, int count);
 void				print_error(void);
 int					f_atoi(const char *str);
 char				*join_args(int argc, char **argv);
+int	is_only_whitespace(char *str);
 
 #endif
