@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:17:35 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 19:42:27 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/14 18:53:13 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	move_to_stack_a(t_stack *stack_a, t_stack *stack_b)
 
 	while (stack_b->head)
 	{
-		max_index = find_max_index(stack_b);
-		max_pos = find_index_position(stack_b, max_index);
+		max_index = find_max(stack_b);
+		max_pos = find_position(stack_b, max_index);
 		mid_point = stack_b->size / 2;
 		if (max_pos >= mid_point)
 		{

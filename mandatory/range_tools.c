@@ -6,13 +6,13 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 22:43:46 by taya              #+#    #+#             */
-/*   Updated: 2025/03/13 19:17:48 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/14 18:53:34 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_max_index(t_stack *stack)
+int	find_max(t_stack *stack)
 {
 	t_node	*current;
 	int		max_index;
@@ -30,7 +30,7 @@ int	find_max_index(t_stack *stack)
 	return (max_index);
 }
 
-int	find_index_position(t_stack *stack, int target_index)
+int	find_position(t_stack *stack, int target_index)
 {
 	t_node	*current;
 	int		position;
