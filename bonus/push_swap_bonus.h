@@ -64,6 +64,6 @@ void				fill_stack(t_stack *stack_a, char **args, int count);
 void				print_error(void);
 int					f_atoi(const char *str);
 char				*join_args(int argc, char **argv);
-int	is_only_whitespace(char *str);
+int					is_only_whitespace(char *str);
 
 #endif
