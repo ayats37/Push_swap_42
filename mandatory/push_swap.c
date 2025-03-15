@@ -6,7 +6,7 @@
 /*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:59:24 by taya              #+#    #+#             */
-/*   Updated: 2025/03/14 23:57:19 by taya             ###   ########.fr       */
+/*   Updated: 2025/03/15 00:16:12 by taya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	t_stack	stack_b;
 	char	**args;
 	int		count;
-
+	
 	if (argc <= 1)
 		return (0);
 	count = 0;
